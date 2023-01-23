@@ -18,29 +18,30 @@ public class Main {
         Mechanic luka = new Mechanic<Truck>("Лука Вижинков", "Тяп Ляп сервис", " ремонтирует грузовые авто ");
         Mechanic petr = new Mechanic<Bus>("Пётр Пучёк", "АвтоРемонт", " ремонтирует автобусы ");
         Mechanic misha = new Mechanic<Transport>("Миша Губайдулин", "Ездит как НАДО", " ремонтирует все виды автомобилей ");
-        List<Mechanic<?>> brigada1;
-        brigada1 = new ArrayList<>(3);
+        Set<Mechanic<?>> brigada1;
+        brigada1 = new HashSet<>(3);
         brigada1.add(foma);
         brigada1.add(misha);
-        List<Mechanic<?>> brigada2;
-        brigada2 = new ArrayList<>(3);
+        Set<Mechanic<?>> brigada2;
+        brigada2 = new HashSet<>(3);
         brigada2.add(luka);
         brigada2.add(misha);
-        List<Mechanic<?>> brigada3;
-        brigada3 = new ArrayList<>(3);
+        Set<Mechanic<?>> brigada3;
+        brigada3 = new HashSet<>(3);
         brigada3.add(petr);
         brigada3.add(misha);
+        brigada3.add(misha);
         Car lada = new Car("Lada", "Granta", 1.7, ivan, Car.BodyType.BODY_S, brigada1);
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova,  Car.BodyType.BODY_V,brigada1);
-        Car bmv = new Car("BMW", "Z8", 3.0, shuric,  Car.BodyType.BODY_K,brigada1);
-        Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, nikita,  Car.BodyType.BODY_U,brigada1);
-        Bus hyundai = new Bus("Hyundai", "Avante", 1.6, nik,  61,brigada3);
-        Bus ural = new Bus("Урал", "Next", 20.22, boris,  24,brigada3);
-        Bus paz = new Bus(" Паз", "Вектор Next", 20.20, artur,  23,brigada3);
-        Bus mercedes = new Bus("Mercedes-Benz", "Tourismo", 20.21, ilia,  120,brigada3);
-        Truck kamaz = new Truck("Камаз", "компас", 12.45, zuric, 2.5,brigada2);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova, Car.BodyType.BODY_V, brigada1);
+        Car bmv = new Car("BMW", "Z8", 3.0, shuric, Car.BodyType.BODY_K, brigada1);
+        Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, nikita, Car.BodyType.BODY_U, brigada1);
+        Bus hyundai = new Bus("Hyundai", "Avante", 1.6, nik, 61, brigada3);
+        Bus ural = new Bus("Урал", "Next", 20.22, boris, 24, brigada3);
+        Bus paz = new Bus(" Паз", "Вектор Next", 20.20, artur, 23, brigada3);
+        Bus mercedes = new Bus("Mercedes-Benz", "Tourismo", 20.21, ilia, 120, brigada3);
+        Truck kamaz = new Truck("Камаз", "компас", 12.45, zuric, 2.5, brigada2);
         Truck zil = new Truck("Зил", "43", 24.12, egor, 23.5, brigada2);
-        Truck man = new Truck("Man", "TGL", 12.45, oleg,13.3, brigada2);
+        Truck man = new Truck("Man", "TGL", 12.45, oleg, 13.3, brigada2);
 
 //        foma.carryOutMaintenance(bmv);
 //        foma.carryOutMaintenance(lada);
@@ -75,7 +76,7 @@ public class Main {
 //        System.out.println(misha);
 
 
-//        Map<Transport, List<Mechanic<?>>> avtoBook = new LinkedHashMap<>();
+//        Map<Transport, Set<Mechanic<?>>> avtoBook = new LinkedHashMap<>();
 //        avtoBook.put(lada, brigada1);
 //        avtoBook.put(audi, brigada1);
 //        avtoBook.put(bmv, brigada1);
@@ -89,19 +90,18 @@ public class Main {
 //        avtoBook.put(man, brigada2);
 //        avtoBook.put(man, brigada3);
 //        avtoBook.put(man, brigada2);
-//        for (Map.Entry<Transport, List<Mechanic<?>>> element : avtoBook.entrySet()) {
+//        for (Map.Entry<Transport, Set<Mechanic<?>>> element : avtoBook.entrySet()) {
 //            System.out.println(" Трансформированый список АВТО-->МЕХАНИК в map- КЛЮЧ:" + element.getKey() + "ЗНАЧЕНИЕ: " + element.getValue());
 //        }
 //        System.out.println(" Если в случае ошибки какой-либо из объектов будет занесен в базу два раза, то в консоль выведется информация без повторов, " +
 //                "так как новое добавление по старому ключу перезатрет старое значение.");
+
         Set<Driver> driversSetList = new HashSet<>(Set.of(ivan, shuric, egor, nikita, artur, ilia, boris, nik, oleg, vova, zuric));
         System.out.println(" множество водителей ");
         for (Driver element : driversSetList) {
             System.out.println(element.toString());
         }
     }
-
-
 //    public static void getMechList(Mechanic... mechanics) {
 //        System.out.println(" Механики список ");
 //        ArrayList<Mechanic> mechanicssList;
@@ -121,8 +121,8 @@ public class Main {
 //        }
 //        System.out.println("  driversList: " + driversList);
 //    }
-//
-//
+////
+////
 //    public static void getTransportsList(Transport... transports) {
 //        System.out.println(" Автомобили список ");
 //        ArrayList<Transport> transportsList;

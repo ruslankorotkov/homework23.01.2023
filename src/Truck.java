@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Truck extends Transport<DriverC> {
     public enum LoadCapacity {
@@ -34,7 +35,7 @@ public class Truck extends Transport<DriverC> {
 
     private LoadCapacity capacity;
 
-    public Truck(String brand, String model, double engineVolume, DriverC driver, double capacity, List<Mechanic<?>> mechanics) {
+    public Truck(String brand, String model, double engineVolume, DriverC driver, double capacity, Set<Mechanic<?>> mechanics) {
         super(brand, model, engineVolume, driver, mechanics);
         if (capacity <= 3.5) {
             this.capacity = LoadCapacity.N1;
@@ -60,7 +61,7 @@ public class Truck extends Transport<DriverC> {
     @Override
     public void printType() {
         System.out.println("Данные по транспортному средству ГРУЗОВИК " + " грузоподъёмность от " +
-                capacity.minCapacity + " до " + capacity.maxCapacity  +" тонн."+ super.toString());
+                capacity.minCapacity + " до " + capacity.maxCapacity + " тонн." + super.toString());
     }
 
     @Override
@@ -89,9 +90,9 @@ public class Truck extends Transport<DriverC> {
     @Override
     public String toString() {
         return " ГРУЗОВИК " +
-                " грузоподъёмность от " + capacity+
-                " тонн. "+
-                 super.toString();
+                " грузоподъёмность от " + capacity +
+                " тонн. " +
+                super.toString();
     }
 }
 

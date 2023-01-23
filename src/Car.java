@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Car extends Transport<DriverB> {
 
@@ -26,7 +27,7 @@ public class Car extends Transport<DriverB> {
 
     private BodyType bodyType;
 
-    public Car(String brand, String model, double engineVolume, DriverB driver,  BodyType bodyType,List<Mechanic<?>> mechanics) {
+    public Car(String brand, String model, double engineVolume, DriverB driver, BodyType bodyType, Set<Mechanic<?>> mechanics) {
         super(brand, model, engineVolume, driver, mechanics);
         this.bodyType = bodyType;
     }
@@ -78,10 +79,10 @@ public class Car extends Transport<DriverB> {
 
     @Override
     public String toString() {
-        return " ЛЕГКОВОЙ АВТОМОБИЛЬ "+
+        return " ЛЕГКОВОЙ АВТОМОБИЛЬ " +
                 " тип кузова "
                 + bodyType.getBodyType()
-                + super.toString() ;
+                + super.toString();
     }
 }
 

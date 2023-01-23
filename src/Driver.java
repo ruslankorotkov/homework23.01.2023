@@ -55,8 +55,8 @@ public abstract class Driver {
     public String toString() {
         return " ВОДИТЕЛЬ:" +
                 " ИМЯ: " + name +
-                ", ПРАВА КАТЕГОРИИ:" + driverLicense +
-                ", СТАЖ:" + experience;
+                ", ПРАВА КАТЕГОРИИ: " + driverLicense +
+                ", СТАЖ: " + experience;
     }
 }
 
