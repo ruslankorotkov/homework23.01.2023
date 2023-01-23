@@ -3,24 +3,38 @@ import java.util.List;
 
 public class Truck extends Transport<DriverC> {
     public enum LoadCapacity {
-        N1("с полной массой до 3,5 тонн"),
-        N2("с полной массой свыше 3,5 до 12 тонн"),
-        N3("с полной массой свыше 12 тонн");
+        N1(0.0, 3.5),
+        N2(3.51, 12.0),
+        N3(12.0, null);
+        private final Double maxCapacity;
+        private final Double minCapacity;
 
-        public String getCapacity() {
-            return capacity;
+        LoadCapacity(Double maxCapacity, Double minCapacity) {
+            this.minCapacity = maxCapacity;
+            this.maxCapacity = minCapacity;
         }
 
-        private final String capacity;
 
-        LoadCapacity(String capacity) {
-            this.capacity = capacity;
+        public Double getMaxCapacity() {
+            return maxCapacity;
+        }
+
+        @Override
+        public String toString() {
+            return " грузоподъёмность " +
+                    " до" + minCapacity +
+                    " от " + maxCapacity +
+                    '}';
+        }
+
+        public Double getMinCapacity() {
+            return minCapacity;
         }
     }
 
     private LoadCapacity capacity;
 
-    public Truck(String brand, String model, double engineVolume, DriverC driver, List<Mechanic<?>> mechanics, double capacity) {
+    public Truck(String brand, String model, double engineVolume, DriverC driver, double capacity, List<Mechanic<?>> mechanics) {
         super(brand, model, engineVolume, driver, mechanics);
         if (capacity <= 3.5) {
             this.capacity = LoadCapacity.N1;
@@ -45,8 +59,8 @@ public class Truck extends Transport<DriverC> {
 
     @Override
     public void printType() {
-        System.out.println("Данные по транспортному средству ГРУЗОВИК " + super.toString() +
-                " грузоподъёмность " + capacity.getCapacity() + " . ");
+        System.out.println("Данные по транспортному средству ГРУЗОВИК " + " грузоподъёмность от " +
+                capacity.minCapacity + " до " + capacity.maxCapacity  +" тонн."+ super.toString());
     }
 
     @Override
@@ -74,8 +88,10 @@ public class Truck extends Transport<DriverC> {
 
     @Override
     public String toString() {
-        return " ГРУЗОВИК " + super.toString() +
-                " грузоподъёмность " + capacity.getCapacity();
+        return " ГРУЗОВИК " +
+                " грузоподъёмность от " + capacity+
+                " тонн. "+
+                 super.toString();
     }
 }
 

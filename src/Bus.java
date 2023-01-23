@@ -22,7 +22,7 @@ public class Bus extends Transport<DriverD> {
 
     private PassengerCapacity places;
 
-    public Bus(String brand, String model, double engineVolume, DriverD driver, List<Mechanic<?>> mechanics, Integer places) {
+    public Bus(String brand, String model, double engineVolume, DriverD driver,  Integer places,List<Mechanic<?>> mechanics) {
         super(brand, model, engineVolume, driver, mechanics);
         if (places <= 10) {
             this.places = PassengerCapacity.EXTRA_SMALL;
@@ -81,6 +81,6 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public String toString() {
-        return " АВТОБУС " + super.toString() + " Вместимость " + places + " мест ";
+        return " АВТОБУС "  + places + " мест "+ super.toString() + " Вместимость ";
     }
 }

@@ -30,17 +30,17 @@ public class Main {
         brigada3 = new ArrayList<>(3);
         brigada3.add(petr);
         brigada3.add(misha);
-        Car lada = new Car("Lada", "Granta", 1.7, ivan, brigada1, Car.BodyType.BODY_S);
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova, brigada1, Car.BodyType.BODY_V);
-        Car bmv = new Car("BMW", "Z8", 3.0, shuric, brigada1, Car.BodyType.BODY_K);
-        Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, nikita, brigada1, Car.BodyType.BODY_U);
-        Bus hyundai = new Bus("Hyundai", "Avante", 1.6, nik, brigada3, 61);
-        Bus ural = new Bus("Урал", "Next", 20.22, boris, brigada3, 24);
-        Bus paz = new Bus(" Паз", "Вектор Next", 20.20, artur, brigada3, 23);
-        Bus mercedes = new Bus("Mercedes-Benz", "Tourismo", 20.21, ilia, brigada3, 120);
-        Truck kamaz = new Truck("Камаз", "компас", 12.45, zuric, brigada2, 2.5);
-        Truck zil = new Truck("Зил", "43", 24.12, egor, brigada2, 23.5);
-        Truck man = new Truck("Man", "TGL", 12.45, oleg, brigada2, 13.3);
+        Car lada = new Car("Lada", "Granta", 1.7, ivan, Car.BodyType.BODY_S, brigada1);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova,  Car.BodyType.BODY_V,brigada1);
+        Car bmv = new Car("BMW", "Z8", 3.0, shuric,  Car.BodyType.BODY_K,brigada1);
+        Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, nikita,  Car.BodyType.BODY_U,brigada1);
+        Bus hyundai = new Bus("Hyundai", "Avante", 1.6, nik,  61,brigada3);
+        Bus ural = new Bus("Урал", "Next", 20.22, boris,  24,brigada3);
+        Bus paz = new Bus(" Паз", "Вектор Next", 20.20, artur,  23,brigada3);
+        Bus mercedes = new Bus("Mercedes-Benz", "Tourismo", 20.21, ilia,  120,brigada3);
+        Truck kamaz = new Truck("Камаз", "компас", 12.45, zuric, 2.5,brigada2);
+        Truck zil = new Truck("Зил", "43", 24.12, egor, 23.5, brigada2);
+        Truck man = new Truck("Man", "TGL", 12.45, oleg,13.3, brigada2);
 
 //        foma.carryOutMaintenance(bmv);
 //        foma.carryOutMaintenance(lada);
@@ -94,7 +94,7 @@ public class Main {
 //        }
 //        System.out.println(" Если в случае ошибки какой-либо из объектов будет занесен в базу два раза, то в консоль выведется информация без повторов, " +
 //                "так как новое добавление по старому ключу перезатрет старое значение.");
-        Set<Driver> driversSetList = new HashSet<>(Set.of(ivan, shuric, egor, nikita, artur, ilia, boris, nik, oleg, vova, zuric,zuric));
+        Set<Driver> driversSetList = new HashSet<>(Set.of(ivan, shuric, egor, nikita, artur, ilia, boris, nik, oleg, vova, zuric));
         System.out.println(" множество водителей ");
         for (Driver element : driversSetList) {
             System.out.println(element.toString());

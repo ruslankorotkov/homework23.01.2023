@@ -26,7 +26,7 @@ public class Car extends Transport<DriverB> {
 
     private BodyType bodyType;
 
-    public Car(String brand, String model, double engineVolume, DriverB driver, List<Mechanic<?>> mechanics, BodyType bodyType) {
+    public Car(String brand, String model, double engineVolume, DriverB driver,  BodyType bodyType,List<Mechanic<?>> mechanics) {
         super(brand, model, engineVolume, driver, mechanics);
         this.bodyType = bodyType;
     }
@@ -78,10 +78,10 @@ public class Car extends Transport<DriverB> {
 
     @Override
     public String toString() {
-        return " ЛЕГКОВОЙ АВТОМОБИЛЬ "
-                + super.toString() +
+        return " ЛЕГКОВОЙ АВТОМОБИЛЬ "+
                 " тип кузова "
-                + bodyType.getBodyType();
+                + bodyType.getBodyType()
+                + super.toString() ;
     }
 }
 
