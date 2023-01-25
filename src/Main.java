@@ -96,11 +96,19 @@ public class Main {
 //        System.out.println(" Если в случае ошибки какой-либо из объектов будет занесен в базу два раза, то в консоль выведется информация без повторов, " +
 //                "так как новое добавление по старому ключу перезатрет старое значение.");
 
-        Set<Driver> driversSetList = new HashSet<>(Set.of(ivan, shuric, egor, nikita, artur, ilia, boris, nik, oleg, vova, zuric));
+        Set<Driver> driversSetList = new HashSet<>();
+        driversSetList.add(ivan);
+        driversSetList.add(shuric);
+        driversSetList.add(egor);
+        driversSetList.add(nikita);
+        driversSetList.add(artur);
+        driversSetList.add(ilia);
+        driversSetList.add(ilia);
+
         System.out.println(" множество водителей ");
-        for (Driver element : driversSetList) {
-            System.out.println(element.toString());
-        }
+        driversSetList.iterator().hasNext();
+            System.out.println(driversSetList);
+
     }
 //    public static void getMechList(Mechanic... mechanics) {
 //        System.out.println(" Механики список ");
