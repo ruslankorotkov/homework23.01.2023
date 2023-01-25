@@ -108,6 +108,7 @@ public class Main {
         System.out.println(" множество водителей ");
         driversSetList.iterator().hasNext();
             System.out.println(driversSetList);
+            System.out.println(Arrays.toString(driversSetList.toArray()));
 
     }
 //    public static void getMechList(Mechanic... mechanics) {
