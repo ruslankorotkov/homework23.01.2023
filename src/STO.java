@@ -18,6 +18,7 @@ public class STO<A extends Transport> {
             fixTheCar();
         } else {
             System.out.println(" Очередь пуста ");
+
         }
     }
 }

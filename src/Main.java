@@ -104,12 +104,18 @@ public class Main {
         driversSetList.add(artur);
         driversSetList.add(ilia);
         driversSetList.add(ilia);
-
-        System.out.println(" множество водителей ");
-        driversSetList.iterator().hasNext();
-            System.out.println(driversSetList);
-            System.out.println(Arrays.toString(driversSetList.toArray()));
-
+//        System.out.println(" множество водителей ");
+//        driversSetList.iterator().hasNext();
+//        System.out.println(driversSetList);
+//        System.out.println(" множество водителей ");
+//        System.out.println(Arrays.toString(driversSetList.toArray()));
+        Iterator<Driver> iterD = driversSetList.iterator();
+        while (iterD.hasNext()) ;
+        iterD.next().toString();
+        {
+            System.out.println(iterD.next());
+        }
+        System.out.println(" У меня в консоли пустота и надпись код 130.");
     }
 //    public static void getMechList(Mechanic... mechanics) {
 //        System.out.println(" Механики список ");

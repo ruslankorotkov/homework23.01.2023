@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Bus extends Transport<DriverD> {
@@ -83,5 +84,19 @@ public class Bus extends Transport<DriverD> {
     @Override
     public String toString() {
         return " АВТОБУС " + places + " мест " + super.toString() + " Вместимость ";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Bus bus = (Bus) o;
+        return places == bus.places;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), places);
     }
 }

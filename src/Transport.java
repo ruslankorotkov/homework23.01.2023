@@ -106,4 +106,5 @@ public abstract class Transport<T extends Driver> implements Competing {
     public int hashCode() {
         return Objects.hash(brand, model, engineVolume, driver, mechanics);
     }
+
 }

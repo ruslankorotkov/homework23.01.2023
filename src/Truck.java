@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Truck extends Transport<DriverC> {
@@ -44,6 +45,20 @@ public class Truck extends Transport<DriverC> {
         } else if (capacity > 12) {
             this.capacity = LoadCapacity.N2;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Truck truck = (Truck) o;
+        return capacity == truck.capacity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), capacity);
     }
 
     @Override

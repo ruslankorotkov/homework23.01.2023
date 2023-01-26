@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Driver {
     private String name;
     public boolean driverLicense;
@@ -57,6 +59,19 @@ public abstract class Driver {
                 " ИМЯ: " + name +
                 ", ПРАВА КАТЕГОРИИ: " + driverLicense +
                 ", СТАЖ: " + experience;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return driverLicense == driver.driverLicense && name.equals(driver.name) && experience.equals(driver.experience);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, driverLicense, experience);
     }
 }
 

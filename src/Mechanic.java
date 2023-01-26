@@ -1,8 +1,5 @@
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Queue;
+import java.util.*;
 
 public class Mechanic<A extends Transport> {
     private String nameMechanic;
@@ -38,6 +35,19 @@ public class Mechanic<A extends Transport> {
 
     public void setAccessToWork(String accessToWork) {
         this.accessToWork = accessToWork;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanic<?> mechanic = (Mechanic<?>) o;
+        return nameMechanic.equals(mechanic.nameMechanic) && companyWork.equals(mechanic.companyWork) && accessToWork.equals(mechanic.accessToWork) && transport.equals(mechanic.transport);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameMechanic, companyWork, accessToWork, transport);
     }
 
     @Override
