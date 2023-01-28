@@ -115,7 +115,6 @@ public class Main {
         Iterator<Driver> iteratorDriver = driversSetList.iterator();
         while (iteratorDriver.hasNext()) {
             System.out.println(iteratorDriver.next());
-
         }
     }
 //    public static void getMechList(Mechanic... mechanics) {
