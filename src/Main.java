@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         DriverB ivan = new DriverB(" Иван ", true, " 6 лет ");
+        DriverB yvan = new DriverB(" Иван ", true, " 6 лет ");
         DriverB vova = new DriverB(" Вова ", true, " 32 лет ");
         DriverB shuric = new DriverB(" Шурик ", true, " 4 лет ");
         DriverB nikita = new DriverB(" Никита ", true, " 6 лет ");
@@ -33,7 +34,7 @@ public class Main {
         brigada3.add(misha);
         Car lada = new Car("Lada", "Granta", 1.7, ivan, Car.BodyType.BODY_S, brigada1);
         Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova, Car.BodyType.BODY_V, brigada1);
-        Car bmv = new Car("BMW", "Z8", 3.0, shuric, Car.BodyType.BODY_K, brigada1);
+        Car bmv = new Car("BMW", "Z8", 3.0, yvan, Car.BodyType.BODY_K, brigada1);
         Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, nikita, Car.BodyType.BODY_U, brigada1);
         Bus hyundai = new Bus("Hyundai", "Avante", 1.6, nik, 61, brigada3);
         Bus ural = new Bus("Урал", "Next", 20.22, boris, 24, brigada3);
@@ -97,25 +98,24 @@ public class Main {
 //                "так как новое добавление по старому ключу перезатрет старое значение.");
 
         Set<Driver> driversSetList = new HashSet<>();
-        driversSetList.add(ivan);
         driversSetList.add(shuric);
         driversSetList.add(egor);
         driversSetList.add(nikita);
         driversSetList.add(artur);
         driversSetList.add(ilia);
-        driversSetList.add(ilia);
+        driversSetList.add(ivan);
+        driversSetList.add(yvan);
 //        System.out.println(" множество водителей ");
 //        driversSetList.iterator().hasNext();
 //        System.out.println(driversSetList);
 //        System.out.println(" множество водителей ");
 //        System.out.println(Arrays.toString(driversSetList.toArray()));
-        Iterator<Driver> iterD = driversSetList.iterator();
-        while (iterD.hasNext()) ;
-        iterD.next().toString();
-        {
-            System.out.println(iterD.next());
+        System.out.println(" создал 2 разных объекта, но с одинаковыми значениями полей: " + ivan + " хешкод " +
+                ivan.hashCode() + " yvan " + yvan + "  хешкод " + yvan.hashCode());
+        Iterator<Driver> iteratorDriver = driversSetList.iterator();
+        while (iteratorDriver.hasNext()) {
+            System.out.println(iteratorDriver.next());
         }
-        System.out.println(" У меня в консоли пустота и надпись код 130.");
     }
 //    public static void getMechList(Mechanic... mechanics) {
 //        System.out.println(" Механики список ");
