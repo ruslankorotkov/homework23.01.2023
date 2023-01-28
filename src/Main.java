@@ -110,7 +110,7 @@ public class Main {
 //        System.out.println(driversSetList);
 //        System.out.println(" множество водителей ");
 //        System.out.println(Arrays.toString(driversSetList.toArray()));
-        System.out.println(" создал 2 разных объекта, но с одинаковыми значениями полей: " + ivan + " хешкод " +
+        System.out.println(" Создал 2 разных объекта, но с одинаковыми значениями полей: " + ivan + " хешкод " +
                 ivan.hashCode() + " yvan " + yvan + "  хешкод " + yvan.hashCode());
         Iterator<Driver> iteratorDriver = driversSetList.iterator();
         while (iteratorDriver.hasNext()) {
