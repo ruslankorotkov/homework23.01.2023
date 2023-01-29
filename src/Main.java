@@ -31,7 +31,6 @@ public class Main {
         brigada3 = new HashSet<>(3);
         brigada3.add(petr);
         brigada3.add(misha);
-        brigada3.add(misha);
         Car lada = new Car("Lada", "Granta", 1.7, ivan, Car.BodyType.BODY_S, brigada1);
         Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova, Car.BodyType.BODY_V, brigada1);
         Car bmv = new Car("BMW", "Z8", 3.0, yvan, Car.BodyType.BODY_K, brigada1);
